@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Design</title>
+  <style>
+    /* خلفية الصفحة */
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #8e44ad, #3498db);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #ffffff;
+    }
+
+    /* الحاوية */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    /* البطاقة */
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 320px;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        color: #333;
+    }
+
+    /* حاوية الصورة */
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .welcome-image {
+        width: 150px;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    /* النصوص */
+    .welcome-text {
+        font-size: 24px;
+        color: #333;
+        margin: 10px 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+        transition: opacity 0.5s ease;
+    }
+
+    /* زر عصري */
+    .modern-button {
+        background: linear-gradient(135deg, #e67e22, #f1c40f);
+        border: none;
+        color: white;
+        font-size: 16px;
+        padding: 12px 25px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .modern-button:hover {
+        background: linear-gradient(135deg, #f1c40f, #e67e22);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="image-container">
+        <img src="https://cdn.leonardo.ai/users/499c57dc-b779-4e6a-8c2e-eb371c6f51bd/generations/344a8799-59fc-446c-94f7-ad280f3f6b2f/variations/Default_Illustrate_a_vibrant_logo_for_an_educational_app_featu_2_344a8799-59fc-446c-94f7-ad280f3f6b2f_0.png" 
+             alt="Welcome Image" class="welcome-image">
+      </div>
+      <h1 class="welcome-text">WelcomeMessage</h1>
+      <p class="subtitle">Login & Explore</p>
+      <button class="modern-button" onclick="startAction()">Get Started</button>
+    </div>
+  </div>
+  <script>
+    // إضافة وظيفة عند الضغط على الزر
+    function startAction() {
+        // إظهار رسالة ترحيب
+        alert("مرحبًا بك! استمتع باستكشاف التطبيق.");
+        
+        // إضافة تأثير على الزر بعد الضغط
+        const button = document.querySelector('.modern-button');
+        button.style.backgroundColor = '#333';
+        button.style.color = '#fff';
+        button.style.transform = 'scale(1.1)';
+        
+        // إعادة الشكل بعد فترة قصيرة
+        setTimeout(() => {
+          button.style.backgroundColor = 'white';
+          button.style.color = '#333';
+          button.style.transform = 'scale(1)';
+        }, 200);
+    }
+    
+    // تغيير النص تلقائيًا بعد التحميل
+    document.addEventListener('DOMContentLoaded', () => {
+        const welcomeText = document.querySelector('.welcome-text');
+        const subtitle = document.querySelector('.subtitle');
+      
+        setTimeout(() => {
+          welcomeText.style.opacity = '0';
+          subtitle.style.opacity = '0';
+    
+          setTimeout(() => {
+            welcomeText.textContent = 'Ready to Learn!';
+            subtitle.textContent = 'Click below to begin!';
+            welcomeText.style.opacity = '1';
+            subtitle.style.opacity = '1';
+          }, 500); // انتظار انتقال التلاشي
+        }, 3000);
+    });
+  </script>
+</body>
+</html>
